@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash · Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pantalla de menú principal -->
+        <div id="main-menu" class="screen active">
+            <h1 class="game-title">⚡ DASH CLONE ⚡</h1>
+            <div class="menu-buttons">
+                <button class="btn" id="btn-play">▶ JUGAR</button>
+                <button class="btn" id="btn-levels">📋 NIVELES</button>
+                <button class="btn" id="btn-shop">🛒 TIENDA</button>
+            </div>
+            <div class="coin-display">🪙 <span id="menu-coins">0</span></div>
+        </div>
+
+        <!-- Pantalla de selección de niveles -->
+        <div id="level-select" class="screen">
+            <h2>Selecciona nivel</h2>
+            <div class="levels-grid" id="levels-container"></div>
+            <button class="btn back-btn">⬅ Volver</button>
+        </div>
+
+        <!-- Pantalla de la tienda -->
+        <div id="shop-screen" class="screen">
+            <h2>🛍️ Tienda de colores</h2>
+            <div class="coin-display">🪙 <span id="shop-coins">0</span></div>
+            <div class="shop-items" id="shop-container"></div>
+            <button class="btn back-btn">⬅ Volver</button>
+        </div>
+
+        <!-- Pantalla del juego -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <span class="level-name">Nivel 1</span>
+                <span class="coin-display">🪙 <span id="game-coins">0</span></span>
+            </div>
+            <canvas id="game-canvas" width="800" height="400"></canvas>
+            <div class="game-controls">
+                <button class="btn" id="pause-btn">⏸️ Pausa</button>
+                <button class="btn" id="exit-game-btn">🏠 Salir</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de pausa (superpuesta) -->
+        <div id="pause-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>Juego en pausa</h2>
+                <button class="btn" id="resume-btn">▶ Continuar</button>
+                <button class="btn" id="restart-btn">🔄 Reiniciar</button>
+                <button class="btn" id="menu-btn">🏠 Menú</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de game over (superpuesta) -->
+        <div id="gameover-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>💀 GAME OVER 💀</h2>
+                <button class="btn" id="restart-gameover-btn">🔄 Reintentar</button>
+                <button class="btn" id="menu-gameover-btn">🏠 Menú</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de nivel completado (superpuesta) -->
+        <div id="complete-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>🎉 NIVEL COMPLETADO 🎉</h2>
+                <p>Ganaste <span id="complete-coins">10</span> monedas</p>
+                <button class="btn" id="next-level-btn">⏩ Siguiente nivel</button>
+                <button class="btn" id="menu-complete-btn">🏠 Menú</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
